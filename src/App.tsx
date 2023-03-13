@@ -1,18 +1,15 @@
-import { lazy } from 'react';
-import { Route } from 'react-router';
-import { routes } from './models';
-import { NotFoundRoute } from './utilities';
-
-const Home = lazy(() => import('./pages/home/Home'));
-const ReduxPage = lazy(() => import('./pages/reduxPage/ReduxPage'));
+import { Outlet, useLocation } from 'react-router-dom';
+import { NavBar } from './components';
+import { Home } from './pages';
 
 function App() {
+  let location = useLocation();
+
   return (
     <div className='App'>
-      <NotFoundRoute>
-        <Route path={routes.HOME} element={<Home />} />
-        <Route path={routes.REDUX} element={<ReduxPage />} />
-      </NotFoundRoute>
+      <NavBar />
+      <Outlet />
+      {location.pathname === '/' ? <Home /> : null}
     </div>
   );
 }
