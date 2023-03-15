@@ -1,14 +1,14 @@
 import { Provider } from 'react-redux';
 import { myReduxStore } from '../../stateManagers';
-import Form from './components/Form/Form';
-import TodosList from './components/TodosList/TodosList';
+import FormR from './components/Form/FormR';
+import TodosListR from './components/TodosList/TodosListR';
 
 function ReduxPage() {
   return (
     <>
       <Provider store={myReduxStore}>
-        <Form />
-        <TodosList />
+        <FormR />
+        <TodosListR />
       </Provider>
     </>
   );

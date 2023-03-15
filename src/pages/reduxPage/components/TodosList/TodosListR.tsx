@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { AppStore } from '../../../../stateManagers';
-import TodosListWrapper from './TodosListWrapper.css';
+import { TodosListWrapper } from '../../../../styles';
 
-function TodosList() {
+function TodosListR() {
   const res = useSelector((state: AppStore) => state.todos);
 
   return (
@@ -20,4 +20,4 @@ function TodosList() {
     </TodosListWrapper>
   );
 }
-export default TodosList;
+export default TodosListR;

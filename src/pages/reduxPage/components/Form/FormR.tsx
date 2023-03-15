@@ -1,12 +1,12 @@
 import { FormEvent, useRef } from 'react';
 import { addTodo, reduxKey } from '../../../../stateManagers/redux/todos/todosSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import FormWrapper from './FormWrapper.css';
 import { ITodos } from '../../../../types';
 import { AppStore } from '../../../../stateManagers';
 import { addLocalStorage } from '../../../../utilities';
+import { FormWrapper } from '../../../../styles';
 
-function Form() {
+function FormR() {
   const inputRef = useRef<HTMLInputElement>(null);
   const res = useSelector((state: AppStore) => state.todos);
 
@@ -27,4 +27,4 @@ function Form() {
     </FormWrapper>
   );
 }
-export default Form;
+export default FormR;
