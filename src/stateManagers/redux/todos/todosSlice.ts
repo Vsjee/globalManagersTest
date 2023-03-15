@@ -3,9 +3,13 @@ import { ITodos } from '../../../types';
 
 const emptyInitialState: ITodos[] = [];
 
+export const reduxKey = 'redux';
+
 const todosSlice = createSlice({
   name: 'todos',
-  initialState: emptyInitialState,
+  initialState: localStorage.getItem(reduxKey)
+    ? JSON.parse(localStorage.getItem(reduxKey) as string)
+    : emptyInitialState,
   reducers: {
     addTodo: (state, payload) => {
       const newTodo = {
