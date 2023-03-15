@@ -11,9 +11,16 @@ function NavBar() {
         </Link>
       </h2>
       <ul className='list'>
-        <Link to={routes.REDUX} className='list__item link'>
-          Redux
-        </Link>
+        <li className='list__item'>
+          <Link to={routes.REDUX} className='list__item link'>
+            Redux
+          </Link>
+        </li>
+        <li className='list__item'>
+          <Link to={routes.ZUSTAND} className='list__item link'>
+            Zustand
+          </Link>
+        </li>
       </ul>
     </NavBarWrapper>
   );
