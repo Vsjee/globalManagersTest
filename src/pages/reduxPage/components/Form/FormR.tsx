@@ -15,9 +15,10 @@ function FormR() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const currVal = inputRef.current?.value;
-    dispatch(addTodo({ task: currVal }));
-
-    addLocalStorage<ITodos[]>(reduxKey, res);
+    if (currVal !== '') {
+      dispatch(addTodo({ task: currVal }));
+      addLocalStorage<ITodos[]>(reduxKey, res);
+    }
   };
 
   return (
