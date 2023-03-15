@@ -1,12 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit/dist/configureStore';
+import { configureStore } from '@reduxjs/toolkit';
 import { ITodos } from '../../types';
 import todosSlice from './todos/todosSlice';
 
-interface AppStore {
+export interface AppStore {
   todos: ITodos[];
 }
 
-export const myStore = configureStore<AppStore>({
+export const myReduxStore = configureStore<AppStore>({
   reducer: {
     todos: todosSlice,
   },
