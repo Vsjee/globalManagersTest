@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { ITodos } from '../../../types';
+import { localInitValues } from '../../../utilities';
 
 const emptyInitialState: ITodos[] = [];
 
@@ -7,9 +8,7 @@ export const reduxKey = 'redux';
 
 const todosSlice = createSlice({
   name: 'todos',
-  initialState: localStorage.getItem(reduxKey)
-    ? JSON.parse(localStorage.getItem(reduxKey) as string)
-    : emptyInitialState,
+  initialState: localInitValues<ITodos[]>(reduxKey, emptyInitialState),
   reducers: {
     addTodo: (state, payload) => {
       const newTodo = {
