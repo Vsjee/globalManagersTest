@@ -1,7 +1,6 @@
 import { FormEvent, useRef } from 'react';
 import { addTodo, reduxKey } from '../../../../stateManagers/redux/todos/todosSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { ITodos } from '../../../../types';
 import { AppStore } from '../../../../stateManagers';
 import { addLocalStorage } from '../../../../utilities';
 import { FormWrapper } from '../../../../styles';
@@ -17,7 +16,7 @@ function FormR() {
     const currVal = inputRef.current?.value;
     if (currVal !== '') {
       dispatch(addTodo({ task: currVal }));
-      addLocalStorage<ITodos[]>(reduxKey, res);
+      addLocalStorage(reduxKey, [...res, { id: res.length + 1, task: currVal, completed: false }]);
     }
   };
 

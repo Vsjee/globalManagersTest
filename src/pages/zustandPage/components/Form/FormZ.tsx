@@ -15,7 +15,10 @@ function FormZ() {
     const currVal: string | any = inputRef.current?.value;
     if (currVal !== '') {
       addTodo(currVal);
-      addLocalStorage<ITodos[]>(zustandKey, todos);
+      addLocalStorage<ITodos[]>(zustandKey, [
+        ...todos,
+        { id: todos.length + 1, task: currVal, completed: false },
+      ]);
     }
   };
 
