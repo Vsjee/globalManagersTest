@@ -6,6 +6,12 @@ const NavBarWrapper = styled.nav`
   align-items: center;
   padding: 0.3rem;
 
+  .list {
+    display: flex;
+    gap: 0.8rem;
+    list-style: none;
+  }
+
   .link {
     color: white;
     text-decoration: none;
