@@ -1,10 +1,14 @@
 import { FormEvent, useRef } from 'react';
-import { addTodo } from '../../../../stateManagers/redux/todos/todosSlice';
-import { useDispatch } from 'react-redux';
+import { addTodo, reduxKey } from '../../../../stateManagers/redux/todos/todosSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import FormWrapper from './FormWrapper.css';
+import { ITodos } from '../../../../types';
+import { AppStore } from '../../../../stateManagers';
+import { addLocalStorage } from '../../../../utilities';
 
 function Form() {
   const inputRef = useRef<HTMLInputElement>(null);
+  const res = useSelector((state: AppStore) => state.todos);
 
   const dispatch = useDispatch();
 
@@ -12,7 +16,8 @@ function Form() {
     e.preventDefault();
     const currVal = inputRef.current?.value;
     dispatch(addTodo({ task: currVal }));
-    console.log(currVal);
+
+    addLocalStorage<ITodos[]>(reduxKey, res);
   };
 
   return (
