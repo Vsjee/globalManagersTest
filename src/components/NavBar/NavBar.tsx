@@ -21,6 +21,11 @@ function NavBar() {
             Zustand
           </Link>
         </li>
+        <li className='list__item'>
+          <Link to={routes.JOTAI} className='list__item link'>
+            Jotai
+          </Link>
+        </li>
       </ul>
     </NavBarWrapper>
   );
