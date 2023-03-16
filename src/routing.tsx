@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
-import App from './App';
+import { JotaiPage, ReduxPage, ZustandPage } from './pages';
 import { routes } from './models';
-import { ReduxPage } from './pages';
-import { ZustandPage } from './pages/zustandPage';
+import App from './App';
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +15,10 @@ export const router = createBrowserRouter([
       {
         path: `${routes.ZUSTAND}`,
         element: <ZustandPage />,
+      },
+      {
+        path: `${routes.JOTAI}`,
+        element: <JotaiPage />,
       },
     ],
   },
