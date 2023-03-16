@@ -3,7 +3,7 @@ import { NavBar } from './components';
 import { Home } from './pages';
 
 function App() {
-  let location = useLocation();
+  const location = useLocation();
 
   return (
     <div className='App'>
