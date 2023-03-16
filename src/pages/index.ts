@@ -1,4 +1,7 @@
 export * from './home';
+export { default as FormJ } from './jotaiPage/components/Form/FormJ';
+export { default as TodosListJ } from './jotaiPage/components/TodosList/TodosListJ';
+export * from './jotaiPage';
 export { default as FormR } from './reduxPage/components/Form/FormR';
 export { default as TodosListR } from './reduxPage/components/TodosList/TodosListR';
 export * from './reduxPage';
